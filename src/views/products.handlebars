@@ -1,0 +1,36 @@
+<h1>Productos</h1>
+
+<form id="filters" action="/products" method="get" class="filters">
+  <input type="text" name="query" placeholder="category:Electronics or free text" value="{{query}}" />
+  <select name="sort">
+    <option value="">Sin orden</option>
+    <option value="asc" {{#if (eq sort "asc")}}selected{{/if}}>Precio asc</option>
+    <option value="desc" {{#if (eq sort "desc")}}selected{{/if}}>Precio desc</option>
+  </select>
+  <input type="number" name="limit" min="1" placeholder="limit" value="{{limit}}" />
+  <button type="submit">Aplicar</button>
+</form>
+
+<ul class="product-list">
+  {{#each products}}
+    <li>
+      <div>
+        <a href="/products/{{this._id}}">{{this.title}}</a>
+        <div class="meta">${{this.price}} • {{this.category}}</div>
+      </div>
+      <div>
+        <button class="add-to-cart" data-id="{{this._id}}">Agregar</button>
+      </div>
+    </li>
+  {{/each}}
+</ul>
+
+<div class="pagination">
+  {{#if hasPrevPage}}
+    <a href="{{prevLink}}">« Anterior</a>
+  {{/if}}
+  Página {{page}} / {{totalPages}}
+  {{#if hasNextPage}}
+    <a href="{{nextLink}}">Siguiente »</a>
+  {{/if}}
+</div>

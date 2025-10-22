@@ -1,0 +1,9 @@
+body { font-family: Arial, sans-serif; background:#f7f7f7; margin:0; padding:20px; }
+.container { max-width:1000px; margin:0 auto; }
+h1 { text-align:center; }
+.filters { display:flex; gap:8px; margin-bottom:12px; }
+.product-list { list-style:none; padding:0; }
+.product-list li { background:#fff; padding:12px; border-radius:6px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; }
+button { background:#0a74da; color:#fff; border:0; padding:8px 10px; border-radius:4px; cursor:pointer; }
+.pagination { text-align:center; margin-top:12px; }
+.meta { color:#666; font-size:0.9em; }
